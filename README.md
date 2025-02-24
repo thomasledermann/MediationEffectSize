@@ -6,4 +6,4 @@ R code is presented that allows a researcher
 - to calculate effect sizes for all direct effects.
 - to estimate power using bootstrap power simulations.
 
-Reference: Ledermann, T., Myriam, R. , & Fritz, M. S. (under review). On partial versus full mediation and effect sizes for direct and indirect effects.
+Reference: Ledermann, T., Myriam, R. , & Fritz, M. S. (under review). On partial versus full mediation and the importance of effect sizes.
