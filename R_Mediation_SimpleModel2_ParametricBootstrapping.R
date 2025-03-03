@@ -1,3 +1,10 @@
+######################################################################################################
+### S i m p l e   M e d i a t i o n   M o d e l   P a r a m e t r i c   B o o t s t r a p p i n g  ###
+### Author: Thomas Ledermann                                                                       ###
+### Created: January 3, 2025                                                                       ###
+### Last update: January 22, 2025                                                                  ###
+######################################################################################################
+
 library(lavaan)
 library(MASS)
 
