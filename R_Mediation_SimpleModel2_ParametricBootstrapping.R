@@ -1,6 +1,7 @@
 library(lavaan)
 library(MASS)
 
+# covariance matrix
 m <- matrix(c(
 	0.9999900, 0.1399986, 0.4445956,
 	0.1399986, 0.9999900, 0.4445956,
