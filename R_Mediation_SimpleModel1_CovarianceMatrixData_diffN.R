@@ -1,18 +1,6 @@
-### a = 0.39, b = c' = 0.14
-# covDat <- matrix(c(1.00, 0.39, 0.14, 0.39, 1.00, 0.14, 0.14, 0.14, 1.00 ), nrow = 3, byrow = TRUE)
-
-### a = b = c' = 0.39
-# covDat <- matrix(c(1.00, 0.39, 0.39, 0.39, 1.00, 0.39, 0.39, 0.39, 1.00 ), nrow = 3, byrow = TRUE)
-
-### a = b = 0.39, c' = 0.14
-# covDat <- matrix(c(1.00, 0.39, 0.14, 0.39, 1.00, 0.39, 0.14, 0.39, 1.00 ), nrow = 3, byrow = TRUE)
-
 ### a = 0.14, b = c' = 0.39
 covDat <- matrix(c(1.00, 0.14, 0.39, 0.14, 1.00, 0.39, 0.39, 0.39, 1.00 ), nrow = 3, byrow = TRUE)
 covDat
-
-### a = c' = 0.39, b = 0.14
-# covDat <- matrix(c(1.00, 0.39, 0.39, 0.39, 1.00, 0.14, 0.39, 0.14, 1.00 ), nrow = 3, byrow = TRUE)
 
 rownames(covDat) <- colnames(covDat) <- c("X", "M", "Y")
 covDat
@@ -325,56 +313,3 @@ rspc2.250
 # f2
 f2.250 <- rspc2.250/(1 - yR2.250)
 f2.250	# 0.01702596
-
-
-###############
-
-
-# Define the correlation matrix
-covDat <- matrix(c(1.00, 0.14, 0.14, 0.14, 1.00, 0.14, 0.14, 0.14, 1.00 ), nrow = 3, byrow = TRUE)
-
-# Set the row and column names
-rownames(covDat) <- colnames(covDat) <- c("X", "M", "Y")
-covDat
-
-### all effects = 0.14
-model <- '
-	M ~ 0.14*X
-	Y ~ 0.14*M + 0.14*X
-
-	X ~~ X
-	M ~~ M
-	Y ~~ Y 
-'
-fit <- sem(model, sample.cov = covDat, sample.nobs = 100000)
-summary(fit, standardized = TRUE)
-
-# Get the model-implied covariance matrix 
-iCov <- inspect(fit, "implied")
-iCov
-
-medmod <- '
-	M ~ X
-	Y ~ M + X
-	X ~~ X
-	M ~~ M
-	Y ~~ Y 
-'
-fit1 <- sem(medmod, sample.cov = iCov, sample.nobs = 100000)
-summary(fit1, standardized = TRUE)
-
-fit1 <- sem(medmod, sample.cov = iCov, sample.nobs = 50)
-summary(fit1, standardized = TRUE)
-
-fit1 <- sem(medmod, sample.cov = iCov, sample.nobs = 100)
-summary(fit1, standardized = TRUE)
-
-fit1 <- sem(medmod, sample.cov = iCov, sample.nobs = 150)
-summary(fit1, standardized = TRUE)
-
-fit1 <- sem(medmod, sample.cov = iCov, sample.nobs = 200)
-summary(fit1, standardized = TRUE)
-
-
-
-
