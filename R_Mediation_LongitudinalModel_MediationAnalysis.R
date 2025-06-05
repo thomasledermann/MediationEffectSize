@@ -2,7 +2,7 @@
 ### L o n g i t u d i n a l   M e d i a t i o n   M o d e l   ###
 ### Author: Thomas Ledermann                                  ###
 ### Created: April 4, 2024                                    ###
-### Last update: January 22, 2025                             ###
+### Last update: June 6, 2025                                 ###
 #################################################################
 
 ### This illustration uses data from Midlife in the United States (MIDUS) study.
@@ -91,7 +91,7 @@ r2_spb2
 r2_spc <- R2full - R2M1M2
 r2_spc
 
-# alternative mthod
+# alternative method
 lmX.M12 <- lm(X ~ M1 + M2, dat)
 lmM1.XM2 <- lm(M1 ~ X + M2, dat)
 lmM2.XM1 <- lm(M2 ~ X + M1, dat)
